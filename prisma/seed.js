@@ -42,29 +42,28 @@ const prisma = new PrismaClient();
 				mission: 'Node'
       },
     });
-    console.log('Create 3 explorers');
 
     const mission1 = await prisma.mission.upsert({
       where: { name: 'missionA' },
       update: {},
       create: {
-        name: 'woopi1',
+        name: 'missionA',
         lang: 'elixir',
-        mission: 'missionA',
+        mission: 'saturn',
         missionCommander: 'Carlo',
         enrollments: 5,
         hasCertification: true
       },
-
+      
     });
 
     const mission2 = await prisma.mission.upsert({
       where: { name: 'missionB' },
       update: {},
       create: {
-        name: 'woopi2',
+        name: 'missionB',
         lang: 'python',
-        mission: 'missionB',
+        mission: 'mars',
         missionCommander: 'Fernanda',
         enrollments: 6,
         hasCertification: false
@@ -75,16 +74,16 @@ const prisma = new PrismaClient();
       where: { name: 'missionC' },
       update: {},
       create: {
-        name: 'woopi3',
+        name: 'missionC',
         lang: 'CSS',
-        mission: 'missionC',
+        mission: 'venus',
         missionCommander: 'Rodrigo',
         enrollments: 4,
         hasCertification: true
       },
     });
 
-    
+    console.log('Create 3 explorers');
     console.log('Create 3 missions');
 
   } catch(e) {
@@ -97,7 +96,3 @@ const prisma = new PrismaClient();
   
 })();
 
-
-(async function main() {
- 
-})();
